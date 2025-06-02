@@ -1,0 +1,97 @@
+/* boiler code  */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #e5dcdc;
+}
+
+
+.heading {
+    text-align: center;
+    font-size: 50px;
+    padding: 10px 10px;
+    margin-top: 50px;
+}
+
+.container {
+    background-color: aquamarine;
+    margin-top: 50px;
+    max-width: 40rem;
+    height: auto ;
+    padding: 0 30px;
+    padding-bottom: 20px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.655);
+    border-radius: 8px;
+}
+
+#searchInput {
+    padding: 8px 10px;
+    width: 100%;
+    margin: 20px 0px;
+    border: 1px solid #1802027f;
+}
+
+div{
+    /* background-color: #fff; */
+    gap: 10px;
+    width: 100%;
+}
+
+.userContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.userContainer .userItem{
+    border: 1px solid #302d2d88;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.userContainer .userItem img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    
+    object-position: top;
+    object-fit: cover;
+    
+}
+
+.userContainer .userItem .textContent{
+    display: flex;
+  flex-direction: column;
+}
+
+.userContainer .userItem .textContent h1 {
+   font-size: 18px;
+   font-family: cursive;
+  font-weight: 300;
+  color: #222;
+  margin-bottom: 4px;
+}
+
+.userContainer .textContent p {
+  font-size: 14px;
+  color: #555;
+}
