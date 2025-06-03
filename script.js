@@ -47,12 +47,62 @@ let user = [
         profileUrl: "Aanya singh.jpg",
         name: "Aanya singh",
         email: "aanyasingh@example.com"
+    },
+    {
+        profileUrl: "https://randomuser.me/api/portraits/men/32.jpg",
+        name: "Aarav Mehta",
+        email: "aarav.mehta@example.com"
+    },
+    {
+        profileUrl: "https://randomuser.me/api/portraits/women/45.jpg",
+        name: "Ishita Sharma",
+        email: "ishita.sharma@example.com"
+    },
+    {
+        profileUrl: "https://randomuser.me/api/portraits/men/76.jpg",
+        name: "Rohan Kapoor",
+        email: "rohan.kapoor@example.com"
+    },
+    {
+        profileUrl: "https://randomuser.me/api/portraits/women/12.jpg",
+        name: "Simran Kaur",
+        email: "simran.kaur@example.com"
+    },
+    {
+        profileUrl: "https://randomuser.me/api/portraits/men/85.jpg",
+        name: "Devansh Verma",
+        email: "devansh.verma@example.com"
+    },
+    {
+        profileUrl: "https://randomuser.me/api/portraits/women/33.jpg",
+        name: "Ananya Joshi",
+        email: "ananya.joshi@example.com"
+    },
+    {
+        profileUrl: "https://randomuser.me/api/portraits/men/14.jpg",
+        name: "Kunal Singh",
+        email: "kunal.singh@example.com"
+    },
+    {
+        profileUrl: "https://randomuser.me/api/portraits/women/54.jpg",
+        name: "Priya Desai",
+        email: "priya.desai@example.com"
+    },
+    {
+        profileUrl: "https://randomuser.me/api/portraits/men/21.jpg",
+        name: "Rahul Nair",
+        email: "rahul.nair@example.com"
+    },
+    {
+        profileUrl: "https://randomuser.me/api/portraits/women/63.jpg",
+        name: "Sneha Patil",
+        email: "sneha.patil@example.com"
     }
 ];
 
 //function to render any arr coming to it :
 function renderUser(arr) {
-    userContainer.innerHTML=""
+    userContainer.innerHTML = ""
     arr.map((obj) => {
         let divElement = document.createElement("div");
         //this backtick(`) is used to multiple line string.
