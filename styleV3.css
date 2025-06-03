@@ -1,0 +1,312 @@
+/* Boiler code with enhanced styling */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /* background: linear-gradient(135deg, #ff6b6b 0%, #be945a 50%, #48dbfb 100%);*/
+    background: #c27474;
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* Enhanced heading with animation */
+.heading {
+    text-align: center;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    padding: 20px 20px;
+    margin-top: 50px;
+    /* background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb); */
+    background: #f5eff1;
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* animation: gradientShift 3s ease-in-out infinite; */
+    font-weight: 700;
+    letter-spacing: 2px;
+    /* animation: fadeInDown 1s ease-out 0.3s forwards, gradientShift 3s ease-in-out infinite; */
+}
+
+
+/* Enhanced container with glassmorphism effect */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 50px;
+    max-width: 42rem;
+    height: auto;
+    padding: 40px 30px 30px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced search input */
+#searchInput {
+    padding: 15px 20px;
+    width: 100%;
+    margin: 20px 0px;
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+#searchInput:focus {
+    border: 2px solid #ff6b6b;
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.02);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 8px 25px rgba(255, 107, 107, 0.2),
+        0 0 0 10px rgba(255, 107, 107, 0.05);
+
+}
+
+#searchInput::placeholder {
+    color: #999;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus::placeholder {
+    opacity: 0.7;
+    transform: translateX(5px);
+}
+
+div {
+    gap: 10px;
+    width: 100%;
+}
+
+/* Enhanced user container */
+.userContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+/* Enhanced user items with modern card design */
+.userContainer .userItem {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+    /* Removed initial opacity and transform to show all users */
+    cursor: pointer;
+}
+
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Hover effects for user items */
+.userContainer .userItem:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 10px 20px rgba(255, 107, 107, 0.1);
+    border-color: rgba(255, 107, 107, 0.3);
+}
+
+.userContainer .userItem::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 107, 107, 0.1),
+            transparent);
+    transition: left 0.5s ease;
+}
+
+.userContainer .userItem:hover::before {
+    left: 100%;
+}
+
+/* Enhanced user avatar */
+.userContainer .userItem img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    object-position: top;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    border: 1.7px solid none;
+    background: linear-gradient(45deg, #ff6b6b, #feca57) padding-box,
+        linear-gradient(45deg, #ff6b6b, #feca57) border-box;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.userContainer .userItem:hover img {
+    transform: scale(1.1) rotate(5deg);
+    /* box-shadow: 0 12px 30px rgba(255, 107, 107, 0.3); */
+}
+
+/* Enhanced text content */
+.userContainer .userItem .textContent {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.userContainer .userItem:hover .textContent {
+    transform: translateY(-2px);
+}
+
+.userContainer .userItem .textContent h1 {
+    font-size: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.userContainer .userItem .textContent h1::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #ff6b6b, #feca57);
+    transition: width 0.3s ease;
+}
+
+.userContainer .userItem:hover .textContent h1::after {
+    width: 100%;
+}
+
+.userContainer .textContent p {
+    font-size: 15px;
+    color: #7f8c8d;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.userContainer .userItem:hover .textContent p {
+    color: #5a6c7d;
+}
+
+/* Active/Click animation */
+.userContainer .userItem:active {
+    transform: translateY(-4px) scale(0.98);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design enhancements */
+@media (max-width: 768px) {
+    .container {
+        margin: 30px 20px;
+        padding: 30px 20px 25px;
+    }
+
+    .heading {
+        margin-top: 30px;
+        padding: 15px;
+    }
+
+    .userContainer .userItem {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .userContainer .userItem img {
+        height: 70px;
+        width: 70px;
+    }
+}
+
+/* Scroll-triggered animations */
+@media (prefers-reduced-motion: no-preference) {
+    .userContainer .userItem {
+        animation-play-state: paused;
+    }
+
+    .userContainer .userItem.animate {
+        animation-play-state: running;
+    }
+}
+
+/* Loading skeleton animation (if needed) */
+@keyframes shimmer {
+    0% {
+        background-position: -468px 0;
+    }
+
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+.loading-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 400% 100%;
+    animation: shimmer 1.2s ease-in-out infinite;
+}

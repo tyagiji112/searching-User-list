@@ -6,25 +6,28 @@ const hoverOn = () => {
     // console.log("hover ho rha ha ");
     searchInput.style.borderRadius = "12px";
 };
+searchInput.addEventListener('mouseenter', hoverOn);   // 👈 No need of '()'
 
 const hoverOff = () => {
     // console.log("hover off hogya ");
     searchInput.style.borderRadius = "2px";
 };
-const search = (obj) => {
-    console.log(searchInput.value);
-    console.log(typeof(obj));
-    obj.name.includes(searchInput.value);
-    obj.email.includes(searchInput.value);
-}
-
-searchInput.addEventListener('mouseenter', hoverOn);   // 👈 No need of '()'
 searchInput.addEventListener('mouseleave', hoverOff);  // 👈 No need of '()'
-searchInput.addEventListener('input',search);
+
+//handling search event of the document
+const search = (obj) => {
+    // console.log(searchInput.value);
+    let searchValue = searchInput.value.toLowerCase();
+    let filteredUser = user.filter((obj) => {
+        return (obj.name.toLowerCase().includes(searchValue) ||
+            obj.email.toLowerCase().includes(searchValue))
+    })
+    renderUser(filteredUser);
+}
+searchInput.addEventListener('input', search);
 
 // creating logic to search by name :
-
-let arr = [
+let user = [
     {
         profileUrl: "aryan mehta.jpg",
         name: "Aryan Mehta",
@@ -47,21 +50,25 @@ let arr = [
     }
 ];
 
-arr.map((obj) => {
-    let divElement = document.createElement("div");
-    //this backtick(`) is used to multiple line string.
-    
-    divElement.className = "userItem";
-    divElement.innerHTML = `
-    <div class="image">
-    <img src="${obj.profileUrl}" alt="${obj.name}" />
-    <div class="textContent">
-    <h1>${obj.name}</h1>
-    <p>${obj.email}</p>
-    </div>
-    </div>
-    `
-    userContainer.append(divElement)
-    
-});
+//function to render any arr coming to it :
+function renderUser(arr) {
+    userContainer.innerHTML=""
+    arr.map((obj) => {
+        let divElement = document.createElement("div");
+        //this backtick(`) is used to multiple line string.
 
+        divElement.className = "userItem";
+        divElement.innerHTML = `
+        <div class="image">
+        <img src="${obj.profileUrl}" alt="${obj.name}" />
+        <div class="textContent">
+        <h1>${obj.name}</h1>
+        <p>${obj.email}</p>
+        </div>
+        </div>
+        `
+        userContainer.append(divElement)
+
+    })
+}
+renderUser(user);         //called the render function
